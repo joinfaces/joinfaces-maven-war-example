@@ -6,10 +6,10 @@
     <groupId>com.github.persapiens</groupId>
     <artifactId>jsf-spring-boot-starter-example</artifactId>
     <version>1.5.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
-    <name>jsf-spring-boot-starter-example</name>
-    <description>Example project for Jsf Spring Boot Starter</description>
+    <name>jsf-spring-boot-starter-example-war</name>
+    <description>Example project for Jsf Spring Boot Starter with War packaging</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -50,9 +50,14 @@
             <!-- Change artifactId to jsf-myfaces-spring-boot-starter to use MyFaces instead of Mojarra -->
             <!-- Change artifactId to jsf-jetty-myfaces-spring-boot-starter to use Jetty servlet container and MyFaces instead of Mojarra-->
             <!-- Change artifactId to jsf-undertow-myfaces-spring-boot-starter to use Undertow servlet container and MyFaces instead of Mojarra-->
-            <artifactId>jsf-spring-boot-starter</artifactId>
+            <artifactId>jsf-myfaces-spring-boot-starter</artifactId>
             <version>${jsf-spring-boot-starter.version}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
