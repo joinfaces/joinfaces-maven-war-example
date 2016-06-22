@@ -1,7 +1,7 @@
 Jsf Spring Boot Starter Example
 =====
-[![Build Status](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example-war.svg?branch=master)](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example)
-[![Dependency Status](https://www.versioneye.com/user/projects/573c95eace8d0e004130bd98/badge.svg?style=flat)](https://www.versioneye.com/user/projects/573c95eace8d0e004130bd98)
+[![Build Status](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example-war.svg?branch=master)](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example-war)
+[![Dependency Status](https://www.versioneye.com/user/projects/573c95eace8d0e004130bd98/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5769d5f8fdabcd003d086c36)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This project illustrates JSF usage inside WAR packaged Spring Boot Application.
