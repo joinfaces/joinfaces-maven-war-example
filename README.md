@@ -1,28 +1,18 @@
 Jsf Spring Boot Starter Example
 =====
-[![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge)](https://jsf-spring-boot-starter-sample.herokuapp.com/helloWorld.jsf)
-[![Build Status](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example.svg?branch=master)](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example)
+[![Build Status](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example-war.svg?branch=master)](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example)
 [![Dependency Status](https://www.versioneye.com/user/projects/573c95eace8d0e004130bd98/badge.svg?style=flat)](https://www.versioneye.com/user/projects/573c95eace8d0e004130bd98)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-This project illustrates JSF usage inside JAR packaged Spring Boot Application.
+This project illustrates JSF usage inside WAR packaged Spring Boot Application.
 
-The [Jsf Spring Boot Starter](https://github.com/persapiens/jsf-spring-boot-starter) autoconfigures [PrimeFaces](http://primefaces.org/), [OmniFaces](http://omnifaces.org/), [Mojarra](https://javaserverfaces.java.net/) and [MyFaces](http://myfaces.apache.org) libraries to run at embedded [Tomcat](http://tomcat.apache.org/), [Jetty](http://www.eclipse.org/jetty) or [Undertow](http://undertow.io/).
-
-## See Example Application in the cloud
-
-1- Access helloWorld page at **https://jsf-spring-boot-starter-sample.herokuapp.com/helloWorld.jsf** with credentials
-
-User | Password | Roles
------| -------- | -----
-persapiens | 123 | ROLE_ADMIN
-nyilmaz | qwe | ROLE_USER
+The [Jsf Spring Boot Starter](https://github.com/persapiens/jsf-spring-boot-starter) autoconfigures [PrimeFaces](http://primefaces.org/), [OmniFaces](http://omnifaces.org/), [Mojarra](https://javaserverfaces.java.net/) and [MyFaces](http://myfaces.apache.org) libraries to run at [Tomcat](http://tomcat.apache.org/), [Jetty](http://www.eclipse.org/jetty) or [Undertow](http://undertow.io/).
 
 ## Run Example Application locally
 
 1- Clone this project
 ```Shell
-git clone https://github.com/persapiens/jsf-spring-boot-starter-example.git
+git clone https://github.com/persapiens/jsf-spring-boot-starter-example-war.git
 ```
 
 2- Build
@@ -30,12 +20,16 @@ git clone https://github.com/persapiens/jsf-spring-boot-starter-example.git
 mvn clean install
 ```
 
-3- Run
-```Shell
-java -jar target/jsf-spring-boot-starter-example-1.5.1-SNAPSHOT.jar
-```
+3- Copy into tomcat, jetty or undertow
 
-4- Access helloWorld page at **http://localhost:8080/helloWorld.jsf**
+4- Start tomcat, jetty or undertow
+
+5- Access helloWorld page at **http://localhost:8080/jsf-spring-boot-starter-example/helloWorld.jsf** with credentials
+
+User | Password | Roles
+-----| -------- | -----
+persapiens | 123 | ROLE_ADMIN
+nyilmaz | qwe | ROLE_USER
 
 ## Key Files
 
