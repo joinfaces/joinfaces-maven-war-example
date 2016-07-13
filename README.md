@@ -38,14 +38,17 @@ nyilmaz | qwe | ROLE_USER
 Includes jsf-spring-boot-starter dependency. All other jsf dependencies are included transitively.
 
 ```xml
-<properties>
-    <jsf-spring-boot-starter.version>1.5.1</jsf-spring-boot-starter.version>
-</properties>
+<parent>
+    <groupId>com.github.persapiens</groupId>
+    <artifactId>jsf-spring-boot-parent</artifactId>
+    <version>1.7.2</version>
+    <relativePath/>
+</parent>
+
 <dependencies>
     <dependency>
       <groupId>com.github.persapiens</groupId>
       <artifactId>jsf-spring-boot-starter</artifactId>
-      <version>${jsf-spring-boot-starter.version}</version>
     </dependency>
 </dependencies>
 ```
@@ -82,7 +85,7 @@ jsf:
     theme: overcast
 ```
 
-### src/main/resources/META-INF/resources/helloWorld.xhtml
+### src/main/resources/META-INF/resources/starter.xhtml
 
 Example page. 
 
@@ -120,7 +123,7 @@ Managed bean using ViewScoped CDI annotation. The equivalent spring scope of Vie
 <pre>
 @Named
 <b>@ViewScoped</b>
-public class HelloWorldMBean {
+public class StarterMBean {
 </pre>
 
 ## Getting Help
