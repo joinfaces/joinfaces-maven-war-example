@@ -6,13 +6,13 @@
     <parent>
         <groupId>com.github.persapiens</groupId>
         <artifactId>jsf-spring-boot-parent</artifactId>
-        <version>1.7.2</version>
+        <version>1.7.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.github.persapiens</groupId>
     <artifactId>jsf-spring-boot-starter-example</artifactId>
-    <version>1.7.2-SNAPSHOT</version>
+    <version>1.7.3-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>jsf-spring-boot-starter-example-war</name>
