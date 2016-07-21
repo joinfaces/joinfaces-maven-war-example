@@ -1,18 +1,18 @@
-Jsf Spring Boot Starter Example
+JoinFaces War Example
 =====
-[![Build Status](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example-war.svg?branch=master)](https://travis-ci.org/persapiens/jsf-spring-boot-starter-example-war)
-[![Dependency Status](https://www.versioneye.com/user/projects/573c95eace8d0e004130bd98/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5769d5f8fdabcd003d086c36)
+[![Build Status](https://travis-ci.org/joinfaces/joinfaces-example-war.svg?branch=master)](https://travis-ci.org/joinfaces/joinfaces-example-war)
+[![Dependency Status](https://www.versioneye.com/user/projects/5791525051500e003188708b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5791525051500e003188708b)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This project illustrates JSF usage inside WAR packaged Spring Boot Application.
 
-The [Jsf Spring Boot Starter](https://github.com/persapiens/jsf-spring-boot-starter) autoconfigures [PrimeFaces](http://primefaces.org/), [OmniFaces](http://omnifaces.org/), [Mojarra](https://javaserverfaces.java.net/) and [MyFaces](http://myfaces.apache.org) libraries to run at [Tomcat](http://tomcat.apache.org/), [Jetty](http://www.eclipse.org/jetty) or [Undertow](http://undertow.io/).
+[JoinFaces](http://joinfaces.org) autoconfigures [PrimeFaces](http://primefaces.org/), [OmniFaces](http://omnifaces.org/), [Mojarra](https://javaserverfaces.java.net/) and [MyFaces](http://myfaces.apache.org) libraries to run at [Tomcat](http://tomcat.apache.org/), [Jetty](http://www.eclipse.org/jetty) or [Undertow](http://undertow.io/).
 
 ## Run Example Application locally
 
 1- Clone this project
 ```Shell
-git clone https://github.com/persapiens/jsf-spring-boot-starter-example-war.git
+git clone https://github.com/joinfaces/joinfaces-example-war.git
 ```
 
 2- Build
@@ -24,7 +24,7 @@ mvn clean install
 
 4- Start tomcat, jetty or undertow
 
-5- Access helloWorld page at **http://localhost:8080/jsf-spring-boot-starter-example/helloWorld.jsf** with credentials
+5- Access helloWorld page at **http://localhost:8080/joinfaces-example/helloWorld.jsf** with credentials
 
 User | Password | Roles
 -----| -------- | -----
@@ -39,15 +39,15 @@ Includes jsf-spring-boot-starter dependency. All other jsf dependencies are incl
 
 ```xml
 <parent>
-    <groupId>com.github.persapiens</groupId>
+    <groupId>org.joinfaces</groupId>
     <artifactId>jsf-spring-boot-parent</artifactId>
-    <version>1.7.3</version>
+    <version>2.0.0</version>
     <relativePath/>
 </parent>
 
 <dependencies>
     <dependency>
-      <groupId>com.github.persapiens</groupId>
+      <groupId>org.joinfaces</groupId>
       <artifactId>jsf-spring-boot-starter</artifactId>
     </dependency>
 </dependencies>
@@ -103,7 +103,7 @@ Look at **authorize** and **anonymous** jsf spring security facelet tags in acti
   </sec:authorize>
 ```
 
-### src/main/java/com/github/persapiens/example/JsfSpringBootStarterExampleApplication.java
+### src/main/java/org/joinfaces/example/JsfSpringBootStarterExampleApplication.java
 
 Very simple spring main application. Only SpringBootApplication configuration is required.
 
@@ -112,11 +112,11 @@ Very simple spring main application. Only SpringBootApplication configuration is
 public class JsfSpringBootStarterExampleApplication {
 </pre>
 
-### src/main/java/com/github/persapiens/example/SecurityConfig.java
+### src/main/java/org/joinfaces/example/SecurityConfig.java
 
 Spring Security configuration class to secure authentication with credentials to persapiens and nyilmaz users.
 
-### src/main/java/com/github/persapiens/example/view/HelloWorldMBean.java
+### src/main/java/org/joinfaces/example/view/HelloWorldMBean.java
 
 Managed bean using ViewScoped CDI annotation. The equivalent spring scope of ViewScoped annotation is configured automatically by Jsf Spring Boot Starter.
 
@@ -128,9 +128,9 @@ public class StarterMBean {
 
 ## Getting Help
 
-* Report questions and bugs at [github.com/jsf-spring-boot-starter-example/issues](https://github.com/persapiens/jsf-spring-boot-starter-example/issues).
+* Report questions and bugs at [github.com/joinfaces/joinfaces/issues](https://github.com/joinfaces/joinfaces/issues).
 
 ## Contributing
 
-* Report documentation, features, enhancement and bugs at [github.com/jsf-spring-boot-starter-example/issues](https://github.com/persapiens/jsf-spring-boot-starter-example/issues).
+* Report documentation, features, enhancement and bugs at [github.com/joinfaces/joinfaces/issues](https://github.com/joinfaces/joinfaces/issues).
 * Pull requests are welcome.
