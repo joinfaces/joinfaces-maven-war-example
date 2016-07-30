@@ -6,17 +6,17 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class JsfSpringBootStarterExampleApplication 
+public class JoinFacesExampleApplication 
     extends SpringBootServletInitializer
 {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(JsfSpringBootStarterExampleApplication.class);
+        return application.sources(JoinFacesExampleApplication.class);
     }
     
 	public static void main(String[] args) {
-		SpringApplication.run(JsfSpringBootStarterExampleApplication.class, args);
+		SpringApplication.run(JoinFacesExampleApplication.class, args);
 	}
     
 }
