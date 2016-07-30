@@ -42,12 +42,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!-- Disable devtools if you want to run inside jetty or wildfly
+        <!-- Disable devtools if you want to run inside jetty or wildfly 
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>     
-        -->
         <dependency>
             <groupId>org.joinfaces</groupId>
             <!-- Change artifactId to jsf-jetty-spring-boot-starter to use Jetty servlet container -->
