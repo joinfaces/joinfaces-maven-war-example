@@ -35,13 +35,13 @@ nyilmaz | qwe | ROLE_USER
 
 ### pom.xml
 
-Includes jsf-spring-boot-starter dependency. All other jsf dependencies are included transitively.
+Includes joinfaces starter dependency. All other jsf dependencies are included transitively.
 
 ```xml
 <parent>
     <groupId>org.joinfaces</groupId>
     <artifactId>jsf-spring-boot-parent</artifactId>
-    <version>2.1.1</version>
+    <version>2.1.2</version>
     <relativePath/>
 </parent>
 
@@ -103,13 +103,13 @@ Look at **authorize** and **anonymous** jsf spring security facelet tags in acti
   </sec:authorize>
 ```
 
-### src/main/java/org/joinfaces/example/JsfSpringBootStarterExampleApplication.java
+### src/main/java/org/joinfaces/example/JoinFacesExampleApplication.java
 
 Very simple spring main application. Only SpringBootApplication configuration is required.
 
 <pre>
 @SpringBootApplication
-public class JsfSpringBootStarterExampleApplication {
+public class JoinFacesExampleApplication {
 </pre>
 
 ### src/main/java/org/joinfaces/example/SecurityConfig.java
