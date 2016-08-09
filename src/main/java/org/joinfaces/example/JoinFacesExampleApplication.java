@@ -6,6 +6,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
+/* Uncomment this if you want to run with executable jetty war
+(exclude = org.joinfaces.jetty.JettySpringBootAutoConfiguration.class)
+*/
+/* Uncomment this if you want to run with executable undertow war
+(exclude = org.joinfaces.undertow.UndertowSpringBootAutoConfiguration.class)
+*/
 public class JoinFacesExampleApplication 
     extends SpringBootServletInitializer
 {
