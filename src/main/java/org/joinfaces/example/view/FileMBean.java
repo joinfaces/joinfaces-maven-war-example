@@ -16,6 +16,7 @@
 
 package org.joinfaces.example.view;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 import javax.faces.bean.ViewScoped;
@@ -24,39 +25,31 @@ import javax.inject.Named;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.primefaces.model.DefaultStreamedContent;
+import org.primefaces.model.StreamedContent;
+import org.primefaces.model.UploadedFile;
+
 /**
- * StarterMBean to show joinfaces starters.
+ * FileMBean to test primefaces upload component.
  * @author Marcelo Fernandes
  */
-@Getter
-@Setter
 @Named
 @ViewScoped
-public class StarterMBean implements Serializable {
+public class FileMBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String servletContainer = "Tomcat";
+	@Getter
+	@Setter
+	private transient UploadedFile uploadedFile;
 
-	private String jsfImplementation = "Mojarra";
+	@Getter
+	private transient StreamedContent downloadFile;
 
-	private String jsfComponents = "PrimeFaces";
-
-	public String getStarter() {
-		String result = "";
-
-		if (!servletContainer.equals("Tomcat")) {
-			result += "-" + servletContainer;
+	public void upload() throws IOException {
+		if (uploadedFile != null) {
+			downloadFile = new DefaultStreamedContent(uploadedFile.getInputstream(),
+				uploadedFile.getContentType(), uploadedFile.getFileName());
 		}
-
-		if (!jsfImplementation.equals("Mojarra")) {
-			result += "-" + jsfImplementation;
-		}
-
-		if (!jsfComponents.equals("PrimeFaces")) {
-			result += "-" + jsfComponents;
-		}
-
-		return "jsf" + result.toLowerCase() + "-spring-boot-starter";
 	}
 }

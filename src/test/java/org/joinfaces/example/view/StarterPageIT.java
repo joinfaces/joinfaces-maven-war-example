@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package org.joinfaces.example;
+package org.joinfaces.example.view;
+
+import org.joinfaces.example.JoinFacesExampleApplication;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,12 +24,37 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = JoinFacesExampleApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class JoinFacesExampleApplicationIT {
+public class StarterPageIT extends AbstractPageIT {
 
 	@Test
-	public void contextLoads() {
+	public void checkPanelHeaderText() {
+		StarterPage starterPage = initElements(StarterPage.class);
+		starterPage.navegateTo();
+
+		assertThat(starterPage.getPanelHeaderText())
+			.contains("jsf-spring-boot-starter");
+	}
+
+	@Test
+	public void clickJettyMyfacesButterfaces() {
+		StarterPage starterPage = initElements(StarterPage.class);
+		starterPage.navegateTo();
+
+		starterPage.clickJetty();
+		assertThat(starterPage.getPanelHeaderText())
+			.contains("jetty");
+
+		starterPage.clickMyFaces();
+		assertThat(starterPage.getPanelHeaderText())
+			.contains("myfaces");
+
+		starterPage.clickButterFaces();
+		assertThat(starterPage.getPanelHeaderText())
+			.contains("butterfaces");
 	}
 
 }

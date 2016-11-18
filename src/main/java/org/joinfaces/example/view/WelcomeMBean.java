@@ -14,23 +14,27 @@
  * limitations under the License.
  */
 
-package org.joinfaces.example;
+package org.joinfaces.example.view;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.Serializable;
+
+import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
- * JoinFaces Example Configuration class.
+ * Welcome Page.
  * @author Marcelo Fernandes
  */
-@SpringBootApplication
-/* Uncomment this if you want to run with executable jetty war
-(exclude = org.joinfaces.jetty.JettySpringBootAutoConfiguration.class)
-*/
-/* Uncomment this if you want to run with executable undertow war
-(exclude = org.joinfaces.undertow.UndertowSpringBootAutoConfiguration.class)
-*/
-public class JoinFacesExampleApplication {
+@Setter
+@Getter
+@Named
+@ViewScoped
+public class WelcomeMBean implements Serializable {
 
-	protected JoinFacesExampleApplication() {
-	}
+	private static final long serialVersionUID = 1L;
+
+	private String text = "";
 }

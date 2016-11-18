@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package org.joinfaces.example;
+package org.joinfaces.example.view;
+
+import org.joinfaces.example.JoinFacesExampleApplication;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,12 +24,30 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = JoinFacesExampleApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class JoinFacesExampleApplicationIT {
+public class WelcomeConverterPageIT extends AbstractPageIT {
 
 	@Test
-	public void contextLoads() {
+	public void checkCustomInputElement() {
+		WelcomeConverterPage page = initElements(WelcomeConverterPage.class);
+		page.navegateTo();
+
+		assertThat(page.getOutputText())
+			.isEqualTo("");
+	}
+
+	@Test
+	public void submitHello() {
+		WelcomeConverterPage page = initElements(WelcomeConverterPage.class);
+		page.navegateTo();
+
+		page.submit("Hello");
+
+		assertThat(page.getOutputText())
+			.isEqualTo("Hello welcome!");
 	}
 
 }

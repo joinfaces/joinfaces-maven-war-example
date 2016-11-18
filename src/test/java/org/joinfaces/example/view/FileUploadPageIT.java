@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-package org.joinfaces.example;
+package org.joinfaces.example.view;
+
+import java.io.File;
+
+import org.joinfaces.example.JoinFacesExampleApplication;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,12 +26,29 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = JoinFacesExampleApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class JoinFacesExampleApplicationIT {
+public class FileUploadPageIT extends AbstractPageIT {
 
 	@Test
-	public void contextLoads() {
+	public void checkFileUploadElement() {
+		FileUploadPage fileUploadPage = initElements(FileUploadPage.class);
+		fileUploadPage.navegateTo();
+
+		assertThat(fileUploadPage.isDownloadButtonEnabled())
+			.isFalse();
 	}
 
+	@Test
+	public void submitApplicationYml() {
+		FileUploadPage fileUploadPage = initElements(FileUploadPage.class);
+		fileUploadPage.navegateTo();
+
+		fileUploadPage.upload(new File("target/classes/application.yml").getAbsolutePath());
+
+		assertThat(fileUploadPage.isDownloadButtonEnabled())
+			.isTrue();
+	}
 }

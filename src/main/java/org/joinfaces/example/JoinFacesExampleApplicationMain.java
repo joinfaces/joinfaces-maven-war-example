@@ -16,21 +16,19 @@
 
 package org.joinfaces.example;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication;
 
 /**
- * JoinFaces Example Configuration class.
+ * Main class.
  * @author Marcelo Fernandes
  */
-@SpringBootApplication
-/* Uncomment this if you want to run with executable jetty war
-(exclude = org.joinfaces.jetty.JettySpringBootAutoConfiguration.class)
-*/
-/* Uncomment this if you want to run with executable undertow war
-(exclude = org.joinfaces.undertow.UndertowSpringBootAutoConfiguration.class)
-*/
-public class JoinFacesExampleApplication {
+public class JoinFacesExampleApplicationMain {
 
-	protected JoinFacesExampleApplication() {
+	protected JoinFacesExampleApplicationMain() {
 	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(JoinFacesExampleApplication.class, args);
+	}
+
 }

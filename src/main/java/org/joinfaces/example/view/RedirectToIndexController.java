@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-package org.joinfaces.example;
+package org.joinfaces.example.view;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * JoinFaces Example Configuration class.
+ * Redirect to index.jsf SPA.
  * @author Marcelo Fernandes
  */
-@SpringBootApplication
-/* Uncomment this if you want to run with executable jetty war
-(exclude = org.joinfaces.jetty.JettySpringBootAutoConfiguration.class)
-*/
-/* Uncomment this if you want to run with executable undertow war
-(exclude = org.joinfaces.undertow.UndertowSpringBootAutoConfiguration.class)
-*/
-public class JoinFacesExampleApplication {
+@Controller
+public class RedirectToIndexController  {
 
-	protected JoinFacesExampleApplication() {
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String redirect() {
+		return "redirect:index.jsf";
 	}
 }

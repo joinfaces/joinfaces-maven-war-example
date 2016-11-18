@@ -14,23 +14,28 @@
  * limitations under the License.
  */
 
-package org.joinfaces.example;
+package org.joinfaces.example.view;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.convert.Converter;
+import javax.faces.convert.FacesConverter;
 
 /**
- * JoinFaces Example Configuration class.
+ * Custom converter component.
  * @author Marcelo Fernandes
  */
-@SpringBootApplication
-/* Uncomment this if you want to run with executable jetty war
-(exclude = org.joinfaces.jetty.JettySpringBootAutoConfiguration.class)
-*/
-/* Uncomment this if you want to run with executable undertow war
-(exclude = org.joinfaces.undertow.UndertowSpringBootAutoConfiguration.class)
-*/
-public class JoinFacesExampleApplication {
+@FacesConverter("org.joinfaces.example.view.WelcomeConverter")
+public class WelcomeConverter implements Converter {
 
-	protected JoinFacesExampleApplication() {
+	@Override
+	public Object getAsObject(FacesContext context, UIComponent component, String value) {
+		return value + " welcome!";
 	}
+
+	@Override
+	public String getAsString(FacesContext context, UIComponent component, Object value) {
+		return value.toString();
+	}
+
 }

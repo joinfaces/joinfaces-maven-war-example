@@ -18,45 +18,36 @@ package org.joinfaces.example.view;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * StarterMBean to show joinfaces starters.
+ * Content Page.
  * @author Marcelo Fernandes
  */
-@Getter
 @Setter
+@Getter
 @Named
 @ViewScoped
-public class StarterMBean implements Serializable {
+public class ContentMBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String servletContainer = "Tomcat";
+	private String page;
 
-	private String jsfImplementation = "Mojarra";
-
-	private String jsfComponents = "PrimeFaces";
-
-	public String getStarter() {
-		String result = "";
-
-		if (!servletContainer.equals("Tomcat")) {
-			result += "-" + servletContainer;
+	@PostConstruct
+	public void init() {
+		String initPage = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("content");
+		if (initPage != null && !initPage.trim().isEmpty()) {
+			page = initPage;
 		}
-
-		if (!jsfImplementation.equals("Mojarra")) {
-			result += "-" + jsfImplementation;
+		else {
+			page = "starter";
 		}
-
-		if (!jsfComponents.equals("PrimeFaces")) {
-			result += "-" + jsfComponents;
-		}
-
-		return "jsf" + result.toLowerCase() + "-spring-boot-starter";
 	}
 }
