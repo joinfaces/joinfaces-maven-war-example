@@ -56,7 +56,7 @@
             <!-- Change artifactId to jsf-myfaces-spring-boot-starter to use MyFaces instead of Mojarra -->
             <!-- Change artifactId to jsf-jetty-myfaces-spring-boot-starter to use Jetty servlet container and MyFaces instead of Mojarra-->
             <!-- Change artifactId to jsf-undertow-myfaces-spring-boot-starter to use Undertow servlet container and MyFaces instead of Mojarra-->
-            <artifactId>jsf-spring-boot-starter</artifactId>
+            <artifactId>jsf-myfaces-spring-boot-starter</artifactId>
             <!-- Uncomment this if you want to run inside jetty container
             <exclusions>
                 <exclusion>
