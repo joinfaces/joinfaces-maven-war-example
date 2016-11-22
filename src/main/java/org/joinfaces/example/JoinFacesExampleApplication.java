@@ -24,11 +24,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 /* Uncomment this if you want to run with executable jetty war
+*/
 (exclude = org.joinfaces.jetty.JettySpringBootAutoConfiguration.class)
-*/
-/* Uncomment this if you want to run with executable undertow war
-(exclude = org.joinfaces.undertow.UndertowSpringBootAutoConfiguration.class)
-*/
 public class JoinFacesExampleApplication {
 
 	protected JoinFacesExampleApplication() {
