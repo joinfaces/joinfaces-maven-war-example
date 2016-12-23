@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.joinfaces</groupId>
         <artifactId>jsf-spring-boot-parent</artifactId>
-        <version>2.3.2</version>
+        <version>2.3.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>org.joinfaces</groupId>
     <artifactId>joinfaces-example</artifactId>
-    <version>2.3.2-SNAPSHOT</version>
+    <version>2.3.3-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>JoinFaces Example WAR</name>
@@ -22,8 +22,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         
         <!-- Uncomment this if you want to use tomcat7
+        <tomcat.version>7.0.73</tomcat.version>
         -->
-        <tomcat.version>8.5.5</tomcat.version>
         <!-- Uncomment this if you want to use with java6
         <jackson.version>2.7.6</jackson.version>
         -->
