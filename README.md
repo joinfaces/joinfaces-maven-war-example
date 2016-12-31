@@ -1,5 +1,6 @@
 JoinFaces War Example
 =====
+[![Heroku](http://heroku-badge.herokuapp.com/?app=joinfaces-example-war&root=index.jsf)](https://joinfaces-example-war.herokuapp.com)
 [![Build Status](https://travis-ci.org/joinfaces/joinfaces-example-war.svg?branch=master)](https://travis-ci.org/joinfaces/joinfaces-example-war)
 [![Dependency Status](https://www.versioneye.com/user/projects/5791525051500e003188708b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5791525051500e003188708b)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
@@ -41,7 +42,7 @@ Includes joinfaces starter dependency. All other jsf dependencies are included t
 <parent>
     <groupId>org.joinfaces</groupId>
     <artifactId>jsf-spring-boot-parent</artifactId>
-    <version>2.3.3</version>
+    <version>2.3.4</version>
     <relativePath/>
 </parent>
 
