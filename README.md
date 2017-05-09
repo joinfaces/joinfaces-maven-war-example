@@ -42,7 +42,7 @@ Includes joinfaces starter dependency. All other jsf dependencies are included t
 <parent>
     <groupId>org.joinfaces</groupId>
     <artifactId>jsf-spring-boot-parent</artifactId>
-    <version>2.3.4</version>
+    <version>2.3.7</version>
     <relativePath/>
 </parent>
 
