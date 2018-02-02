@@ -1,8 +1,8 @@
 JoinFaces War Example
 =====
 [![Heroku](http://heroku-badge.herokuapp.com/?app=joinfaces-example-war&root=index.jsf)](https://joinfaces-example-war.herokuapp.com)
-[![Build Status](https://travis-ci.org/joinfaces/joinfaces-maven-war-example.svg?branch=master)](https://travis-ci.org/joinfaces/joinfaces-example-war)
-[![Dependency Status](https://www.versioneye.com/user/projects/5791525051500e003188708b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5791525051500e003188708b)
+[![Build Status](https://travis-ci.org/joinfaces/joinfaces-maven-war-example.svg?branch=master)](https://travis-ci.org/joinfaces/joinfaces-maven-war-example)
+[![Dependency Status](https://www.versioneye.com/user/projects/5a7463b20fb24f27ee2198c0/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5a7463b20fb24f27ee2198c0)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This project illustrates JSF usage inside WAR packaged Spring Boot Application.
