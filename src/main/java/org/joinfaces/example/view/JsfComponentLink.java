@@ -18,36 +18,25 @@ package org.joinfaces.example.view;
 
 import java.io.Serializable;
 
-import javax.annotation.PostConstruct;
-import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
-
+import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 /**
- * Content Page.
+ * Store information about jsf component link.
+ *
  * @author Marcelo Fernandes
  */
-@Setter
 @Getter
-@Named
-@ViewScoped
-public class ContentMBean implements Serializable {
+@Builder
+public class JsfComponentLink implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String page;
+	private String name;
 
-	@PostConstruct
-	public void init() {
-		String initPage = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("content");
-		if (initPage != null && !initPage.trim().isEmpty()) {
-			this.page = initPage;
-		}
-		else {
-			this.page = "starter";
-		}
-	}
+	private String site;
+
+	private String image;
+
+	private String version;
 }
