@@ -24,6 +24,6 @@ install: ./mvnw -B clean validate
 
 script:
   - ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-findbugs -DskipTests=true install
-  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=firefox verify
+#  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=firefox verify
 #  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=chrome verify
 
