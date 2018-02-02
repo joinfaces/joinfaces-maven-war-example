@@ -19,12 +19,11 @@ package org.joinfaces.example.view;
 import java.io.IOException;
 import java.io.Serializable;
 
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 import org.primefaces.model.UploadedFile;
@@ -47,9 +46,9 @@ public class FileMBean implements Serializable {
 	private transient StreamedContent downloadFile;
 
 	public void upload() throws IOException {
-		if (uploadedFile != null) {
-			downloadFile = new DefaultStreamedContent(uploadedFile.getInputstream(),
-				uploadedFile.getContentType(), uploadedFile.getFileName());
+		if (this.uploadedFile != null) {
+			this.downloadFile = new DefaultStreamedContent(this.uploadedFile.getInputstream(),
+				this.uploadedFile.getContentType(), this.uploadedFile.getFileName());
 		}
 	}
 }
