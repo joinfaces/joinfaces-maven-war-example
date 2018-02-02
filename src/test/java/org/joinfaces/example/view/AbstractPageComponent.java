@@ -17,7 +17,6 @@
 package org.joinfaces.example.view;
 
 import lombok.Setter;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -35,12 +34,12 @@ public abstract class AbstractPageComponent {
 	protected abstract String url();
 
 	public void navegateTo() {
-		webDriver.navigate().to(preffix + url());
+		this.webDriver.navigate().to(this.preffix + url());
 	}
 
 	public <T extends AbstractPageComponent> T initElements(Class<T> classx) {
-		T result = PageFactory.initElements(webDriver, classx);
-		result.setPreffix(preffix);
+		T result = PageFactory.initElements(this.webDriver, classx);
+		result.setPreffix(this.preffix);
 		return result;
 	}
 

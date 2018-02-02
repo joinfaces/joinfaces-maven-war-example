@@ -12,14 +12,14 @@
             <title>.:: JoinFaces Example ::.</title>
             <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
             <link href="#{resource['images/favicon.ico']}" rel="shortcut icon"/>
-            <h:outputStylesheet name="starter.css" />
-            <h:outputScript name="starter.js" />
+            <h:outputStylesheet library="css" name="starter.css" />
+            <h:outputScript library="js" name="starter.js" />
         </h:head>
 
         <h:body>            
             <p:layout fullPage="true" >
                 <p:layoutUnit position="center" >
-                    <h:form id="contentForm" prependId="false" enctype="multipart/form-data">
+                    <h:form id="spa_content" prependId="false" enctype="multipart/form-data">
                         <p:ajaxStatus onstart="PF('statusDialog').show();"
                                       onsuccess="PF('statusDialog').hide();" />
                         <p:dialog widgetVar="statusDialog" position="right top"

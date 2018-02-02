@@ -17,7 +17,6 @@
 package org.joinfaces.example.view;
 
 import org.joinfaces.example.JoinFacesExampleApplication;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -37,8 +36,8 @@ public class MenuOfPageNotRunningYet extends AbstractPageIT {
 
 		StarterPage page = menu.clickStarter();
 
-		assertThat(page.getPanelHeaderText())
-			.contains("jsf-spring-boot-starter");
+		assertThat(page.getServletContainerTabHeaderText())
+			.contains("Tomcat : Servlet Container");
 	}
 
 	@Test
