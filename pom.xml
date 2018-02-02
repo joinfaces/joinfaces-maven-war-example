@@ -20,6 +20,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
         
         <selenium.version>3.8.1</selenium.version>
         <htmlunit.version>2.29</htmlunit.version>
