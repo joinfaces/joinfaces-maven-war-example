@@ -3,7 +3,6 @@ jsf:
   FACELETS_LIBRARIES: /tags/tags.taglib.xml
   primefaces:
     theme: overcast
-    moveScriptsToBottom: true
 joinfaces:
   version: @project.parent.version@
 spring-boot:

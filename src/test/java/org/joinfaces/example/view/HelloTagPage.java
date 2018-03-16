@@ -29,7 +29,7 @@ public class HelloTagPage extends AbstractPageComponent {
 
 	@Override
 	protected String url() {
-		return "/helloTag.jsf";
+		return "/index.jsf?content=helloTag";
 	}
 
 	private By getHelloWorldDivBy() {

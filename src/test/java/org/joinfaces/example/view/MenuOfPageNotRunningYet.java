@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = JoinFacesExampleApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class MenuOfPageIT extends AbstractPageIT {
+public class MenuOfPageNotRunningYet extends AbstractPageIT {
 
 	@Test
 	public void clickStarter() {

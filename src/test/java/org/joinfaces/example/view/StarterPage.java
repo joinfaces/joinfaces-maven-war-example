@@ -49,7 +49,7 @@ public class StarterPage extends AbstractPageComponent {
 
 	@Override
 	protected String url() {
-		return "/starter.jsf";
+		return "/index.jsf?content=starter";
 	}
 
 	private void click(WebElement webElement, String technology, By tabHeaderBy)  {

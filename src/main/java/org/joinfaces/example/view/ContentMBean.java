@@ -16,19 +16,38 @@
 
 package org.joinfaces.example.view;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import java.io.Serializable;
+
+import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
- * Redirect to index.jsf SPA.
+ * Content Page.
  * @author Marcelo Fernandes
  */
-@Controller
-public class RedirectToIndexController  {
+@Setter
+@Getter
+@Named
+@ViewScoped
+public class ContentMBean implements Serializable {
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String redirect() {
-		return "redirect:index.jsf";
+	private static final long serialVersionUID = 1L;
+
+	private String page;
+
+	@PostConstruct
+	public void init() {
+		String initPage = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("content");
+		if (initPage != null && !initPage.trim().isEmpty()) {
+			this.page = initPage;
+		}
+		else {
+			this.page = "starter";
+		}
 	}
 }
