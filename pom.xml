@@ -6,23 +6,20 @@
     <parent>
         <groupId>org.joinfaces</groupId>
         <artifactId>joinfaces-parent</artifactId>
-        <version>3.0.0.RC1</version>
+        <version>3.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>org.joinfaces</groupId>
     <artifactId>joinfaces-example</artifactId>
-    <version>3.0.0.RC1-SNAPSHOT</version>
+    <version>3.0.2-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>JoinFaces Example WAR</name>
     <description>Example project for Jsf Spring Boot Starter with War packaging</description>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        
-        <selenium.version>3.8.1</selenium.version>
+        <selenium.version>3.10.0</selenium.version>
         <htmlunit.version>2.29</htmlunit.version>
         <webdrivermanager.version>2.1.0</webdrivermanager.version>
         <all-themes.version>1.0.10</all-themes.version>
@@ -59,6 +56,16 @@
         <dependency>
             <groupId>org.joinfaces</groupId>
             <artifactId>primefaces-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.joinfaces</groupId>
+                    <artifactId>tomcat-spring-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.joinfaces</groupId>
+            <artifactId>undertow-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
