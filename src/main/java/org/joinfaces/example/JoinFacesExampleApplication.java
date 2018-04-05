@@ -23,9 +23,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Marcelo Fernandes
  */
 @SpringBootApplication
-/* Uncomment this if you want to run with executable jetty war
-*/
-(exclude = org.joinfaces.autoconfigure.jetty.JettyAutoConfiguration.class)
 public class JoinFacesExampleApplication {
 
 	protected JoinFacesExampleApplication() {
