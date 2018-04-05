@@ -23,7 +23,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Marcelo Fernandes
  */
 @SpringBootApplication
-(exclude = org.joinfaces.autoconfigure.undertow.UndertowAutoConfiguration.class)
 public class JoinFacesExampleApplication {
 
 	protected JoinFacesExampleApplication() {
