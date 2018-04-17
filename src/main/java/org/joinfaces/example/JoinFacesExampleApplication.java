@@ -16,15 +16,18 @@
 
 package org.joinfaces.example;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
  * JoinFaces Example Configuration class.
  * @author Marcelo Fernandes
  */
 @SpringBootApplication
-public class JoinFacesExampleApplication {
+public class JoinFacesExampleApplication extends SpringBootServletInitializer {
 
-	protected JoinFacesExampleApplication() {
+	public static void main(String[] args) {
+		SpringApplication.run(JoinFacesExampleApplication.class, args);
 	}
 }
