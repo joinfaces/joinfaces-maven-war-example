@@ -7,6 +7,11 @@ cache:
   - $HOME/.m2
 addons:
   firefox: latest
+
+env:
+- TOMCAT_VERSION=8.5.29
+- TOMCAT_VERSION=8.0.50
+
 before_script:
   - echo "Extracting firefox and setting PATH variable..."
   - tar -xjf /tmp/firefox-*.tar.bz2 --directory /tmp
@@ -17,10 +22,18 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install google-chrome-stable
 
-install: ./mvnw -B clean validate
+install:
+- ./mvnw -B clean validate
+- wget http://archive.apache.org/dist/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.zip
+- unzip apache-tomcat-$TOMCAT_VERSION.zip
+- chmod a+x apache-tomcat-$TOMCAT_VERSION/bin/*.sh
+- apache-tomcat-$TOMCAT_VERSION/bin/catalina.sh start
 
 script:
   - ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-findbugs -DskipTests=true install
 #  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=firefox verify
   - /usr/bin/xvfb-run ./mvnw -DwebDriverType=chrome verify
+  - cp target/joinfaces-example-*.war  apache-tomcat-$TOMCAT_VERSION/webapps/joinfaces-maven-war-example.jar
+  - timeout --preserve-status 60s tail -f apache-tomcat-$TOMCAT_VERSION/logs/catalina.out || true
+  - wget localhost:8080/joinfaces-maven-war-example/index.xhtml
 
