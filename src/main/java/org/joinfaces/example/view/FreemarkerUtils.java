@@ -16,16 +16,18 @@
 
 package org.joinfaces.example.view;
 
+import java.io.IOException;
+import java.util.Map;
+
+import javax.enterprise.context.ApplicationScoped;
+
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
-
-import javax.enterprise.context.ApplicationScoped;
-import java.io.IOException;
-import java.util.Map;
 
 /**
  * Freemarker utitily class to merge map and templates.
