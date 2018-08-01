@@ -28,7 +28,7 @@ before_script:
 
 install:
 - ./mvnw -B clean validate
-- wget http://archive.apache.org/dist/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.zip
+- wget http://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_VERSION:0:1}/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.zip
 - unzip apache-tomcat-$TOMCAT_VERSION.zip
 - chmod a+x apache-tomcat-$TOMCAT_VERSION/bin/*.sh
 - apache-tomcat-$TOMCAT_VERSION/bin/catalina.sh start
