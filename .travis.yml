@@ -12,6 +12,7 @@ addons:
   firefox: latest
 
 env:
+- TOMCAT_VERSION=9.0.10
 - TOMCAT_VERSION=8.5.32
 - TOMCAT_VERSION=8.0.53
 
