@@ -1,7 +1,8 @@
 JoinFaces War Example
 =====
-[![Heroku](http://heroku-badge.herokuapp.com/?app=joinfaces-example-war&root=index.jsf)](https://joinfaces-example-war.herokuapp.com)
+[![Heroku](http://heroku-badge.herokuapp.com/?app=joinfaces-example-war&root=starter.jsf)](https://joinfaces-example-war.herokuapp.com)
 [![Build Status](https://travis-ci.org/joinfaces/joinfaces-maven-war-example.svg?branch=master)](https://travis-ci.org/joinfaces/joinfaces-maven-war-example)
+[![Codecov](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example/branch/master/graph/badge.svg)](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example)
 [![Dependency Status](https://www.versioneye.com/user/projects/5a7463b20fb24f27ee2198c0/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5a7463b20fb24f27ee2198c0)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
@@ -42,7 +43,7 @@ Includes joinfaces starter dependency. All other jsf dependencies are included t
 <parent>
     <groupId>org.joinfaces</groupId>
     <artifactId>joinfaces-parent</artifactId>
-    <version>3.2.3</version>
+    <version>3.2.4</version>
     <relativePath/>
 </parent>
 
