@@ -1,7 +1,10 @@
 dist: trusty
 language: java
 jdk:
+  - oraclejdk8
   - openjdk8
+  - oraclejdk11
+  - openjdk11
 cache:
   directories:
   - $HOME/.m2
@@ -9,8 +12,8 @@ addons:
   firefox: latest
 
 env:
-- TOMCAT_VERSION=8.5.29
-- TOMCAT_VERSION=8.0.50
+- TOMCAT_VERSION=8.5.32
+- TOMCAT_VERSION=8.0.53
 
 before_script:
   - echo "Extracting firefox and setting PATH variable..."
@@ -36,4 +39,7 @@ script:
   - cp -v target/joinfaces-example-*.war  apache-tomcat-$TOMCAT_VERSION/webapps/joinfaces-maven-war-example.war
   - timeout --preserve-status 60s tail -f apache-tomcat-$TOMCAT_VERSION/logs/catalina.out || true
   - wget localhost:8080/joinfaces-maven-war-example/index.xhtml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
