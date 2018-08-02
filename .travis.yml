@@ -34,7 +34,8 @@ install:
 - apache-tomcat-$TOMCAT_VERSION/bin/catalina.sh start
 
 script:
-  - ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-findbugs -DskipTests=true install
+  - export SKIP_TESTS=`if [[ $TOMCAT_VERSION == "9.0.10" ]] ; then echo "true"; else echo "false"; fi`
+  - ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-findbugs -DskipTests=$SKIP_TESTS install
 #  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=firefox verify
   - /usr/bin/xvfb-run ./mvnw -DwebDriverType=chrome verify
   - cp -v target/joinfaces-example-*.war  apache-tomcat-$TOMCAT_VERSION/webapps/joinfaces-maven-war-example.war
