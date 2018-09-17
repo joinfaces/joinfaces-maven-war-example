@@ -6,24 +6,24 @@
     <parent>
         <groupId>org.joinfaces</groupId>
         <artifactId>joinfaces-parent</artifactId>
-        <version>3.2.3</version>
+        <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>org.joinfaces</groupId>
     <artifactId>joinfaces-example</artifactId>
-    <version>3.2.3-SNAPSHOT</version>
+    <version>3.2.5-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>JoinFaces Example WAR</name>
     <description>Example project for Jsf Spring Boot Starter with War packaging</description>
 
     <properties>
-        <selenium.version>3.12.0</selenium.version>
-        <htmlunit.version>2.31</htmlunit.version>
-        <webdrivermanager.version>2.2.2</webdrivermanager.version>
-        <all-themes.version>1.0.10</all-themes.version>
-        <jarchivelib.version>0.7.1</jarchivelib.version>
+        <selenium.version>3.14.0</selenium.version>
+        <htmlunit.version>2.33</htmlunit.version>
+        <webdrivermanager.version>3.0.0</webdrivermanager.version>
+        <primefaces-theme.version>1.0.10</primefaces-theme.version>
+        <jarchivelib.version>0.8.0</jarchivelib.version>
         
         <pmd.excludeFromFailureFile>${check.dir}/pmd/pmd-exclude.properties</pmd.excludeFromFailureFile> 
         
@@ -81,6 +81,15 @@
         <dependency>
             <groupId>org.joinfaces</groupId>
             <artifactId>myfaces-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.joinfaces</groupId>
+            <artifactId>tomcat-spring-boot-starter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -155,8 +164,8 @@
         </dependency>
         <dependency>
             <groupId>org.primefaces.themes</groupId>
-            <artifactId>all-themes</artifactId>
-            <version>${all-themes.version}</version>
+            <artifactId>overcast</artifactId>
+            <version>${primefaces-theme.version}</version>
         </dependency>    
         <dependency>
             <groupId>org.rauschig</groupId>
@@ -168,6 +177,10 @@
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
         </dependency>        
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-core</artifactId>
+        </dependency>
     </dependencies>
 	
     <build>
