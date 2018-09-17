@@ -36,11 +36,10 @@ install:
 script:
   - ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-findbugs -DskipTests=true install
 #  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=firefox verify
-  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=chrome verify
+  - if [[ $TOMCAT_VERSION == "9.0.10" ]] ; then /usr/bin/xvfb-run ./mvnw -DwebDriverType=chrome verify ; fi
   - cp -v target/joinfaces-example-*.war  apache-tomcat-$TOMCAT_VERSION/webapps/joinfaces-maven-war-example.war
   - timeout --preserve-status 60s tail -f apache-tomcat-$TOMCAT_VERSION/logs/catalina.out || true
   - wget localhost:8080/joinfaces-maven-war-example/index.xhtml
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
