@@ -190,11 +190,6 @@
         </dependency>		
         <dependency>
             <groupId>org.joinfaces</groupId>
-            <artifactId>tomcat-spring-boot-starter</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.joinfaces</groupId>
             <artifactId>primefaces-spring-boot-starter</artifactId>
             <exclusions>
                 <exclusion>
@@ -222,6 +217,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
