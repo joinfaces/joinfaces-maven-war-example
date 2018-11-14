@@ -2,7 +2,7 @@ dist: trusty
 language: java
 jdk:
   - openjdk8
-  - openjdk10
+  - openjdk11
 cache:
   directories:
   - $HOME/.m2
@@ -10,9 +10,8 @@ addons:
   firefox: latest
 
 env:
-- TOMCAT_VERSION=9.0.10
-- TOMCAT_VERSION=8.5.32
-- TOMCAT_VERSION=8.0.53
+- TOMCAT_VERSION=9.0.13
+- TOMCAT_VERSION=8.5.35
 
 before_script:
   - echo "Extracting firefox and setting PATH variable..."
@@ -32,9 +31,9 @@ install:
 - apache-tomcat-$TOMCAT_VERSION/bin/catalina.sh start
 
 script:
-  - ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-findbugs -DskipTests=true install
+  - ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-spotbugs -DskipTests=true install
 #  - /usr/bin/xvfb-run ./mvnw -DwebDriverType=firefox verify
-  - if [[ $TOMCAT_VERSION == "9.0.10" ]] ; then /usr/bin/xvfb-run ./mvnw -DwebDriverType=chrome verify ; fi
+  - if [[ $TOMCAT_VERSION == "9.0.13" ]] ; then /usr/bin/xvfb-run ./mvnw -DwebDriverType=chrome verify ; fi
   - cp -v target/joinfaces-example-*.war  apache-tomcat-$TOMCAT_VERSION/webapps/joinfaces-maven-war-example.war
   - timeout --preserve-status 60s tail -f apache-tomcat-$TOMCAT_VERSION/logs/catalina.out || true
   - wget localhost:8080/joinfaces-maven-war-example/index.xhtml
