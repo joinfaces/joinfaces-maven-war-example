@@ -3,7 +3,6 @@ JoinFaces War Example
 [![Heroku](http://heroku-badge.herokuapp.com/?app=joinfaces-example-war&root=starter.jsf)](https://joinfaces-example-war.herokuapp.com)
 [![Build Status](https://travis-ci.org/joinfaces/joinfaces-maven-war-example.svg?branch=master)](https://travis-ci.org/joinfaces/joinfaces-maven-war-example)
 [![Codecov](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example/branch/master/graph/badge.svg)](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example)
-[![Dependency Status](https://www.versioneye.com/user/projects/5a7463b20fb24f27ee2198c0/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5a7463b20fb24f27ee2198c0)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This project illustrates JSF usage inside WAR packaged Spring Boot Application.
@@ -22,11 +21,11 @@ git clone https://github.com/joinfaces/joinfaces-example-war.git
 mvn clean install
 ```
 
-3- Copy into tomcat, jetty or undertow
+3- Copy into tomcat
 
-4- Start tomcat, jetty or undertow
+4- Start tomcat
 
-5- Access helloWorld page at **http://localhost:8080/joinfaces-example/helloWorld.jsf** with credentials
+5- Access starter page at **http://localhost:8080/joinfaces-example/** with credentials
 
 User | Password | Roles
 -----| -------- | -----
@@ -40,38 +39,37 @@ nyilmaz | qwe | ROLE_USER
 Includes joinfaces starter dependency. All other jsf dependencies are included transitively.
 
 ```xml
-<parent>
-    <groupId>org.joinfaces</groupId>
-    <artifactId>joinfaces-parent</artifactId>
-    <version>4.0.0</version>
-    <relativePath/>
-</parent>
+<properties>
+   <joinfaces.version>4.0.0</joinfaces.version>
+</properties>
+
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.joinfaces</groupId>
+            <artifactId>joinfaces-dependencies</artifactId>
+            <version>${joinfaces.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
 
 <dependencies>
-    <dependency>
-      <groupId>org.joinfaces</groupId>
-      <artifactId>jsf-spring-boot-starter</artifactId>
-    </dependency>
+  <dependency>
+    <groupId>org.joinfaces</groupId>
+    <artifactId>jsf-spring-boot-starter</artifactId>
+  </dependency>
 </dependencies>
 ```
 
-If you prefer **Jetty** instead of **Tomcat**, change artifactId jsf-spring-boot-starter to **jsf-jetty-spring-boot-starter** in order to use **Jetty** servlet container. 
-
-If you prefer **Undertow** instead of **Tomcat**, change artifactId jsf-spring-boot-starter to **jsf-undertow-spring-boot-starter** in order to use **Undertow** servlet container. 
-
-If you prefer **MyFaces** instead of **Mojarra**, change artifactId jsf-spring-boot-starter to **jsf-myfaces-spring-boot-starter** in order to use **MyFaces** JSF Implementation. 
-
-If you prefer **Jetty** instead of **Tomcat** and **MyFaces** instead of **Mojarra**, change artifactId jsf-spring-boot-starter to **jsf-jetty-mojarra-spring-boot-starter**. 
-
-If you prefer **Undertow** instead of **Tomcat** and **MyFaces** instead of **Mojarra**, change artifactId jsf-spring-boot-starter to **jsf-undertow-mojarra-spring-boot-starter**. 
-
-Note that **spring-boot-starter-security** is included to secure the application.
+Note that **security-spring-boot-starter** is included to secure the application.
 
 ```xml
 <dependencies>
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
+        <groupId>org.joinfaces</groupId>
+        <artifactId>security-spring-boot-starter</artifactId>
     </dependency>
 </dependencies>
 ```
@@ -81,15 +79,16 @@ Note that **spring-boot-starter-security** is included to secure the application
 Configure jsf.PROJECT_STATE and jsf.primefaces.THEME properties.
 
 ```yml
-jsf:
-  PROJECT_STAGE: Development
+joinfaces:
+  jsf:
+    PROJECT_STAGE: Development
   primefaces: 
     theme: overcast
 ```
 
 ### src/main/resources/META-INF/resources/starter.xhtml
 
-Example page. 
+Example page to help you choose the right JoinFaces Starter for you. 
 
 Note that xhtml, js, css and images files should be located at **src/main/resources/META-INF/resources** directory to JSF use them.
 
@@ -120,7 +119,7 @@ Spring Security configuration class to secure authentication with credentials to
 
 ### src/main/java/org/joinfaces/example/view/HelloWorldMBean.java
 
-Managed bean using ViewScoped CDI annotation. The equivalent spring scope of ViewScoped annotation is configured automatically by Jsf Spring Boot Starter.
+Managed bean using ViewScoped CDI annotation. The equivalent spring scope of ViewScoped annotation is configured automatically by JoinFaces Starter.
 
 <pre>
 @Named
