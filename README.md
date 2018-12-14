@@ -21,9 +21,9 @@ git clone https://github.com/joinfaces/joinfaces-example-war.git
 mvn clean install
 ```
 
-3- Copy into tomcat, jetty or undertow
+3- Copy into tomcat
 
-4- Start tomcat, jetty or undertow
+4- Start tomcat
 
 5- Access starter page at **http://localhost:8080/joinfaces-example/** with credentials
 
