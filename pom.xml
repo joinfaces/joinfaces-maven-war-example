@@ -190,20 +190,38 @@
         </dependency>		
         <dependency>
             <groupId>org.joinfaces</groupId>
-            <artifactId>tomcat-spring-boot-starter</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.joinfaces</groupId>
             <artifactId>primefaces-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.joinfaces</groupId>
+                    <artifactId>tomcat-spring-boot-starter</artifactId>                    
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.joinfaces</groupId>
             <artifactId>omnifaces1-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.joinfaces</groupId>
+                    <artifactId>tomcat-spring-boot-starter</artifactId>                    
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.joinfaces</groupId>
             <artifactId>security-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.joinfaces</groupId>
+                    <artifactId>tomcat-spring-boot-starter</artifactId>                    
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.joinfaces</groupId>
+            <artifactId>undertow-spring-boot-starter</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.joinfaces</groupId>
