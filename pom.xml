@@ -577,11 +577,11 @@
         <repository>  
             <id>primefaces-maven-repository</id>  
             <name>PrimeFaces Maven Repository</name>  
-            <url>http://repository.primefaces.org</url>  
+            <url>https://repository.primefaces.org</url>  
         </repository>        
         <repository>
             <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
+            <url>https://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -601,7 +601,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
+            <url>https://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>            
