@@ -3,6 +3,7 @@ JoinFaces War Example
 [![Heroku](http://heroku-badge.herokuapp.com/?app=joinfaces-example-war&root=starter.jsf)](https://joinfaces-example-war.herokuapp.com)
 [![Build Status](https://travis-ci.org/joinfaces/joinfaces-maven-war-example.svg?branch=master)](https://travis-ci.org/joinfaces/joinfaces-maven-war-example)
 [![Codecov](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example/branch/master/graph/badge.svg)](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=joinfaces_joinfaces-maven-war-example&metric=bugs)](https://sonarcloud.io/dashboard?id=joinfaces_joinfaces-maven-war-example)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This project illustrates JSF usage inside WAR packaged Spring Boot Application.
