@@ -44,7 +44,6 @@
             <activatedProfile>check-pmd</activatedProfile>
             <activatedProfile>check-spotbugs</activatedProfile>
             <activatedProfile>check-dependency</activatedProfile>
-            <activatedProfile>check-sonarqube</activatedProfile>
         </activatedProfiles>
         <properties>
             <skipTests>true</skipTests>
