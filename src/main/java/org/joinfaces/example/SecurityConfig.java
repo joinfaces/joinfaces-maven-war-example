@@ -19,6 +19,7 @@ package org.joinfaces.example;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -34,6 +35,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
  */
 @Configuration
 @EnableWebSecurity
+@EnableConfigurationProperties(ApplicationUsers.class)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
