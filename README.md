@@ -87,7 +87,7 @@ joinfaces:
     theme: overcast
 ```
 
-### src/main/resources/META-INF/resources/starter.xhtml
+### src/main/webapp/starter.xhtml
 
 Example page to help you choose the right JoinFaces Starter for you. 
 
