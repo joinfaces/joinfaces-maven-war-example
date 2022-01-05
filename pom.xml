@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.1</version>
+        <version>2.6.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -24,9 +24,9 @@
         <maven-model.version>3.8.4</maven-model.version>
 
         <!-- test library versions -->
-        <selenium.version>4.1.0</selenium.version>
-        <htmlunit-driver.version>3.55.0</htmlunit-driver.version>
-        <htmlunit.version>2.55.0</htmlunit.version>
+        <selenium.version>4.1.1</selenium.version>
+        <htmlunit-driver.version>3.56.0</htmlunit-driver.version>
+        <htmlunit.version>2.56.0</htmlunit.version>
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <jarchivelib.version>1.2.0</jarchivelib.version>
 
@@ -41,13 +41,13 @@
 
         <!-- check library versions -->
         <no-package-cycles-enforcer-rule.version>1.0.9</no-package-cycles-enforcer-rule.version>
-        <spotbugs-maven-plugin.version>4.5.0.0</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.5.2.0</spotbugs-maven-plugin.version>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
         <maven-pmd-plugin.version>3.15.0</maven-pmd-plugin.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
-        <checkstyle.version>9.2</checkstyle.version>
+        <checkstyle.version>9.2.1</checkstyle.version>
 
         <check.dir>src/checkconfig</check.dir>
         <checkstyle.dir>${check.dir}/checkstyle</checkstyle.dir>
@@ -64,7 +64,7 @@
         <duplicate.ignoredResourcePattern>(about.html|mozilla/public-suffix-list.txt)</duplicate.ignoredResourcePattern>
         <duplicate.ignoredClassPattern>(META-INF.versions.9.module-info|javax.el.*)</duplicate.ignoredClassPattern>
 
-        <dependency-check-maven.version>6.5.0</dependency-check-maven.version>
+        <dependency-check-maven.version>6.5.2</dependency-check-maven.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <sonar.projectKey>joinfaces_joinfaces-maven-war-example</sonar.projectKey>
         <sonar.organization>joinfaces</sonar.organization>
