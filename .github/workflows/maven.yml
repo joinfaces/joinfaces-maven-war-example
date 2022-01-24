@@ -36,13 +36,15 @@ jobs:
       - name: Dump environment variables
         id: dump-env
         env:
-          MATRIX_JAVA: ${{ matrix.java }}
-          JAVA_ELEVEN: ${{ matrix.java == 11 }}
-          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          MATRIX_JAVA_VALUE: ${{ matrix.java }}
+          MATRIZ_JAVA_ELEVEN: ${{ matrix.java == 11 }}
+          GITHUB_EVENT_NAME_VALUE: ${{ github.event_name }}
           GITHUB_EVENT_NAME_PUSH: ${{ github.event_name == 'push' }}
-          GIT_BRANCH_NAME_MASTER: ${{ env.GIT_BRANCH_NAME == 'master' }}
+          GITHUB_REF_NAME_VALUE: ${{ github.ref_name }}
+          GITHUB_REF_NAME_MASTER: ${{ github.ref_name == 'master' }}
+          GITHUB_REPOSITORY_OWNER_VALUE: ${{ github.repository_owner }}
           GITHUB_REPOSITORY_OWNER_JOINFACES: ${{ github.repository_owner == 'joinfaces' }}
-          CAN_SONARQUBE: ${{ matrix.java == 11 && github.event_name == 'push' && env.GIT_BRANCH_NAME == 'master' && github.repository_owner == 'joinfaces' }}
+          CAN_SONARQUBE: ${{ matrix.java == 11 && github.event_name == 'push' && github.ref_name == 'master' && github.repository_owner == 'joinfaces' }}
         run: env
 
       - name: Validate with Maven
@@ -68,6 +70,6 @@ jobs:
         env:
           # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ matrix.java == 11 && github.event_name == 'push' && env.GIT_BRANCH_NAME == 'master' && github.repository_owner == 'joinfaces' }}
+        if: ${{ matrix.java == 11 && github.event_name == 'push' && github.ref_name == 'master' && github.repository_owner == 'joinfaces' }}
         run: ./mvnw -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Pcheck-sonarqube sonar:sonar
 
