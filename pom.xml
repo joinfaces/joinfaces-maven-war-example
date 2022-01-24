@@ -12,7 +12,7 @@
 
     <groupId>org.joinfaces</groupId>
     <artifactId>joinfaces-example</artifactId>
-    <version>4.7.0-m1</version>
+    <version>5.0.0-m1</version>
     <packaging>war</packaging>
 
     <name>JoinFaces Example WAR</name>
@@ -20,6 +20,7 @@
 
     <properties>
         <!-- compile library versions -->
+        <jakarta.validation-api.version>3.0.0</jakarta.validation-api.version>
         <joinfaces.version>5.0.0-m1</joinfaces.version>
         <maven-model.version>3.8.4</maven-model.version>
 
@@ -74,6 +75,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation-api.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.joinfaces</groupId>
                 <artifactId>joinfaces-dependencies</artifactId>
                 <version>${joinfaces.version}</version>
@@ -96,8 +102,8 @@
                         <artifactId>commons-logging</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>javax.servlet-api</artifactId>
+                        <groupId>jakarta.servlet</groupId>
+                        <artifactId>jakarta.servlet-api</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -157,6 +163,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -203,15 +213,17 @@
         </dependency>
         <dependency>
             <groupId>org.joinfaces</groupId>
-            <artifactId>omnifaces1-spring-boot-starter</artifactId>
+            <artifactId>omnifaces-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>jakarta.el</groupId>
+                    <artifactId>jakarta.el-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.joinfaces</groupId>
             <artifactId>security-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.joinfaces</groupId>
-            <artifactId>rewrite-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

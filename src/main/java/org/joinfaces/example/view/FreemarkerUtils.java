@@ -19,7 +19,7 @@ package org.joinfaces.example.view;
 import java.io.IOException;
 import java.util.Map;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
