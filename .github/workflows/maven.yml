@@ -33,6 +33,18 @@ jobs:
       - uses: browser-actions/setup-firefox@latest
       - uses: browser-actions/setup-chrome@latest
 
+      - name: Dump environment variables
+        id: dump-env
+        env:
+          MATRIX_JAVA: ${{ matrix.java }}
+          JAVA_ELEVEN: ${{ matrix.java == 11 }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_EVENT_NAME_PUSH: ${{ github.event_name == 'push' }}
+          GIT_BRANCH_NAME_MASTER: ${{ env.GIT_BRANCH_NAME == 'master' }}
+          GITHUB_REPOSITORY_OWNER_JOINFACES: ${{ github.repository_owner == 'joinfaces' }}
+          CAN_SONARQUBE: ${{ matrix.java == 11 && github.event_name == 'push' && env.GIT_BRANCH_NAME == 'master' && github.repository_owner == 'joinfaces' }}
+        run: env
+
       - name: Validate with Maven
         run: ./mvnw -B clean validate
 
@@ -56,6 +68,6 @@ jobs:
         env:
           # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ matrix.java == 11 && github.event_name == 'push' && env.GIT_BRANCH_NAME == 'master' && env.GITHUB_REPOSITORY_OWNER == 'joinfaces' }}
+        if: ${{ matrix.java == 11 && github.event_name == 'push' && env.GIT_BRANCH_NAME == 'master' && github.repository_owner == 'joinfaces' }}
         run: ./mvnw -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Pcheck-sonarqube sonar:sonar
 
