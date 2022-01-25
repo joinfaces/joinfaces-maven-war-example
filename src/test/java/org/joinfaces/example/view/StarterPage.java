@@ -95,11 +95,11 @@ public class StarterPage extends AbstractPageComponent {
 	}
 
 	public void clickOmnifaces() {
-		click(joinFacesComponentRadioButtonInput(6), "OmniFaces", getJoinFacesComponentsTabHeaderBy());
+		click(joinFacesComponentRadioButtonInput(3), "OmniFaces", getJoinFacesComponentsTabHeaderBy());
 	}
 
 	public void clickTobago() {
-		click(joinFacesComponentRadioButtonInput(10), "Tobago", getJoinFacesComponentsTabHeaderBy());
+		click(joinFacesComponentRadioButtonInput(4), "Tobago", getJoinFacesComponentsTabHeaderBy());
 	}
 
 	public void clickPomTab() {
