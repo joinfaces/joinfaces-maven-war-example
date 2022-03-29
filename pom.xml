@@ -12,7 +12,7 @@
 
     <groupId>org.joinfaces</groupId>
     <artifactId>joinfaces-example</artifactId>
-    <version>4.7.0-m2</version>
+    <version>4.7.x</version>
     <packaging>war</packaging>
 
     <name>JoinFaces Example WAR</name>
