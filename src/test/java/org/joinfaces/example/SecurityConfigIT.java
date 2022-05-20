@@ -22,9 +22,9 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
+@SuppressFBWarnings("THROWS_METHOD_THROWS_CLAUSE_THROWABLE")
 public class SecurityConfigIT {
 
-	@SuppressFBWarnings("THROWS_METHOD_THROWS_CLAUSE_THROWABLE")
 	@Test
 	public void exceptionOnConfigureNull() {
 		Assertions.assertThrows(RuntimeException.class, () -> new SecurityConfig().configure((HttpSecurity) null));

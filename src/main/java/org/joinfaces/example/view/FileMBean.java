@@ -34,6 +34,7 @@ import org.springframework.stereotype.Component;
  * FileMBean to test primefaces upload component.
  * @author Marcelo Fernandes
  */
+@SuppressFBWarnings("THROWS_METHOD_THROWS_RUNTIMEEXCEPTION")
 @Component
 @ViewScoped
 public class FileMBean implements Serializable {
@@ -51,7 +52,6 @@ public class FileMBean implements Serializable {
 	/**
 	* Upload file action.
 	*/
-	@SuppressFBWarnings("THROWS_METHOD_THROWS_RUNTIMEEXCEPTION")
 	public void upload() {
 		if (this.uploadedFile != null) {
 			this.downloadFile = DefaultStreamedContent.builder()
