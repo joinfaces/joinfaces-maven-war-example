@@ -51,6 +51,7 @@ public class FileMBean implements Serializable {
 	/**
 	* Upload file action.
 	*/
+	@SuppressFBWarnings("THROWS_METHOD_THROWS_RUNTIMEEXCEPTION")
 	public void upload() {
 		if (this.uploadedFile != null) {
 			this.downloadFile = DefaultStreamedContent.builder()
