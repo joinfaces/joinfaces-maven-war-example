@@ -30,7 +30,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
 /**
- * Freemarker utitily class to merge map and templates.
+ * Freemarker utility class to merge map and templates.
  *
  * @author Marcelo Fernandes
  */
