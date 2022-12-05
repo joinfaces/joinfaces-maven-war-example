@@ -37,12 +37,7 @@ jobs:
         run: ./mvnw -B clean validate
 
       - name: Static validation with Maven
-        if: ${{ matrix.java != 8 }}
         run: ./mvnw -B -Pcheck-duplicate,check-checkstyle,check-cycles,check-cpd,check-pmd,check-spotbugs,check-dependency -DskipTests=true -Dmaven.compiler.source=${{ matrix.java }} -Dmaven.compiler.target=${{ matrix.java }} install
-
-      - name: Static validation with Maven
-        if: ${{ matrix.java == 8 }}
-        run: ./mvnw -B -Pcheck-duplicate,check-cycles,check-cpd,check-pmd,check-spotbugs,check-dependency -DskipTests=true install
 
       - name: Tests with Maven
         uses: GabrielBB/xvfb-action@v1
@@ -61,6 +56,6 @@ jobs:
         env:
           # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ matrix.java == 11 && github.event_name == 'push' && github.ref_name == '4.7.x' && github.repository_owner == 'joinfaces' }}
+        if: ${{ matrix.java == 17 && github.event_name == 'push' && github.ref_name == '5.0.x' && github.repository_owner == 'joinfaces' }}
         run: ./mvnw -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Pcheck-sonarqube sonar:sonar
 
