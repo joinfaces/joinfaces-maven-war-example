@@ -1,6 +1,5 @@
 JoinFaces War Example
 =====
-[![Heroku](http://heroku-badge.herokuapp.com/?app=joinfaces-example-war&root=starter.jsf)](https://joinfaces-example-war.herokuapp.com)
 [![Build Status](https://github.com/joinfaces/joinfaces-maven-war-example/actions/workflows/maven.yml/badge.svg)](https://github.com/joinfaces/joinfaces-maven-war-example/actions)
 [![Codecov](https://codecov.io/gh/joinfaces/joinfaces-maven-war-example/branch/4.7.x/graph/badge.svg)](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=joinfaces_joinfaces-maven-war-example&metric=bugs)](https://sonarcloud.io/dashboard?id=joinfaces_joinfaces-maven-war-example)
@@ -8,7 +7,7 @@ JoinFaces War Example
 
 This SAP (Single Page Application) illustrates JSF usage inside WAR packaged Spring Boot Application.
 
-[JoinFaces](http://joinfaces.org) autoconfigures [PrimeFaces](http://primefaces.org/), [OmniFaces](http://omnifaces.org/), [Mojarra](https://javaserverfaces.java.net/) and [MyFaces](http://myfaces.apache.org) libraries to run at [Tomcat](http://tomcat.apache.org/), [Jetty](http://www.eclipse.org/jetty) or [Undertow](http://undertow.io/).
+[JoinFaces](http://joinfaces.org) autoconfigures [PrimeFaces](http://primefaces.org/), [OmniFaces](http://omnifaces.org/), [Mojarra](https://eclipse-ee4j.github.io/mojarra/) and [MyFaces](http://myfaces.apache.org) libraries to run at [Tomcat](http://tomcat.apache.org/), [Jetty](http://www.eclipse.org/jetty) or [Undertow](http://undertow.io/).
 
 ## Run Example Application locally
 
@@ -43,7 +42,7 @@ Includes joinfaces starter dependency. All other jsf dependencies are included t
 
 ```xml
 <properties>
-   <joinfaces.version>5.0.0-m3</joinfaces.version>
+   <joinfaces.version>5.0.0</joinfaces.version>
 </properties>
 
 <dependencyManagement>
