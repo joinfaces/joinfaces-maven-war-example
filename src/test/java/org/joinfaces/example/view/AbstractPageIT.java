@@ -24,7 +24,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -75,10 +74,9 @@ public class AbstractPageIT {
 	private static WebDriver getFirefoxDriver() {
 		WebDriverManager.getInstance(FirefoxDriver.class).setup();
 		FirefoxOptions firefoxOptions = new FirefoxOptions();
-		FirefoxProfile firefoxProfile = new FirefoxProfile();
-		// setting preference because of https://github.com/mozilla/geckodriver/issues/659
-		firefoxProfile.setPreference("dom.file.createInChild", true);
-		firefoxOptions.setProfile(firefoxProfile);
+		firefoxOptions.setHeadless(true);
+		firefoxOptions.addArguments("--width=1920");
+		firefoxOptions.addArguments("--height=1080");
 		return new FirefoxDriver(firefoxOptions);
 	}
 
