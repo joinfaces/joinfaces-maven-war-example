@@ -21,6 +21,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -66,7 +67,9 @@ public class AbstractPageIT {
 
 	private static WebDriver getChromeDriver() {
 		WebDriverManager.getInstance(ChromeDriver.class).setup();
-		return new ChromeDriver();
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.addArguments("--headless", "--window-size=1920,1080", "--ignore-certificate-errors");
+		return new ChromeDriver(chromeOptions);
 	}
 
 	private static WebDriver getFirefoxDriver() {
