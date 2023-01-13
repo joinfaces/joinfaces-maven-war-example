@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up JDK ${{ matrix.java }}
-        uses: actions/setup-java@v3.5.1
+        uses: actions/setup-java@v3
         with:
           java-version: ${{ matrix.java }}
           distribution: 'temurin'
@@ -45,17 +45,11 @@ jobs:
         run: ./mvnw -B -Pcheck-duplicate,check-cycles,check-cpd,check-pmd,check-spotbugs,check-dependency -DskipTests=true install
 
       - name: Tests with Maven
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: ./mvnw -B -DwebDriverType=chrome verify
+        run: ./mvnw -B -DwebDriverType=chrome verify
 
       - uses: codecov/codecov-action@v3
         with:
           fail_ci_if_error: true
-
-      - name: Git branch name
-        id: git-branch-name
-        uses: EthanSK/git-branch-name-action@v1
 
       - name: Sonarqube with Maven
         env:
