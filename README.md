@@ -42,7 +42,7 @@ Includes joinfaces starter dependency. All other jsf dependencies are included t
 
 ```xml
 <properties>
-   <joinfaces.version>5.0.4</joinfaces.version>
+   <joinfaces.version>5.1.0</joinfaces.version>
 </properties>
 
 <dependencyManagement>
@@ -60,7 +60,7 @@ Includes joinfaces starter dependency. All other jsf dependencies are included t
 <dependencies>
   <dependency>
     <groupId>org.joinfaces</groupId>
-    <artifactId>jsf-spring-boot-starter</artifactId>
+    <artifactId>faces-spring-boot-starter</artifactId>
   </dependency>
 </dependencies>
 ```
@@ -78,11 +78,11 @@ Note that **security-spring-boot-starter** is included to secure the application
 
 ### src/main/resources/application.yml
 
-Configure jsf.PROJECT_STATE and jsf.primefaces.THEME properties.
+Configure faces.PROJECT_STATE and faces.primefaces.THEME properties.
 
 ```yml
 joinfaces:
-  jsf:
+  faces:
     PROJECT_STAGE: Development
   primefaces: 
     theme: overcast
