@@ -35,6 +35,7 @@ import org.springframework.security.web.SecurityFilterChain;
  *
  * @author Marcelo Fernandes
  */
+@SuppressFBWarnings("SPRING_CSRF_PROTECTION_DISABLED")
 @Configuration
 @EnableWebSecurity
 @EnableConfigurationProperties(ApplicationUsers.class)
@@ -48,7 +49,6 @@ public class SecurityConfig {
 	 * @return SecurityFilterChain that contains all the security filters
 	 * @throws BeanCreationException if something in the configuration is wrong
 	 */
-	@SuppressFBWarnings("SPRING_CSRF_PROTECTION_DISABLED")
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) {
 		try {
