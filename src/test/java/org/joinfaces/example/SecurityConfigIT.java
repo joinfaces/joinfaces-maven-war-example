@@ -28,7 +28,7 @@ public class SecurityConfigIT {
 	@Test
 	public void exceptionOnConfigureNull() {
 		SecurityConfig securityConfig = new SecurityConfig();
-		Assertions.assertThrows(BeanCreationException.class, () -> securityConfig.configure(null));
+		Assertions.assertThrows(BeanCreationException.class, () -> securityConfig.configure(null, null));
 	}
 
 }
