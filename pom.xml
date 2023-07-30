@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.7</version>
+        <version>3.0.9</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -21,18 +21,16 @@
     <properties>
         <!-- compile library versions -->
         <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
-        <joinfaces.version>5.0.7</joinfaces.version>
+        <joinfaces.version>5.0.9</joinfaces.version>
         <maven-model.version>3.9.3</maven-model.version>
         <httpclient5.version>5.2.1</httpclient5.version>
 
         <!-- test library versions -->
-        <selenium.version>4.8.1</selenium.version>
-        <htmlunit-driver.version>4.8.1</htmlunit-driver.version>
-        <htmlunit.version>3.3.0</htmlunit.version>
-        <webdrivermanager.version>5.3.2</webdrivermanager.version>
-        <jarchivelib.version>1.2.0</jarchivelib.version>
+        <selenium.version>4.10.0</selenium.version>
+        <htmlunit-driver.version>4.10.0</htmlunit-driver.version>
+        <webdrivermanager.version>5.4.1</webdrivermanager.version>
 
-        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>        
+        <jacoco-maven-plugin.version>0.8.9</jacoco-maven-plugin.version>        
         <jacoco.exclude>org/joinfaces/example/JoinFacesExampleApplication.class</jacoco.exclude>
         <jacoco.totalLineRate>0.91</jacoco.totalLineRate>
         <jacoco.packageLineRate>0.90</jacoco.packageLineRate>
@@ -43,14 +41,14 @@
 
         <!-- check library versions -->
         <no-package-cycles-enforcer-rule.version>1.0.9</no-package-cycles-enforcer-rule.version>
-        <spotbugs-maven-plugin.version>4.7.3.2</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.7.3.3</spotbugs-maven-plugin.version>
         <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-pmd-plugin.version>3.21.0</maven-pmd-plugin.version>
         <maven-checkstyle-plugin.version>3.3.0</maven-checkstyle-plugin.version>
-        <checkstyle.version>10.9.2</checkstyle.version>
+        <checkstyle.version>10.12.1</checkstyle.version>
 
         <check.dir>src/checkconfig</check.dir>
         <checkstyle.dir>${check.dir}/checkstyle</checkstyle.dir>
@@ -63,11 +61,11 @@
         <checkstyle.suppressionsLocation>${checkstyle.dir}/checkstyle-suppressions.xml</checkstyle.suppressionsLocation>
         <checkstyle.headerLocation>${checkstyle.dir}/checkstyle-header.txt</checkstyle.headerLocation>
         <checkstyle.excludes />
-        <duplicate-finder-maven-plugin.version>1.5.1</duplicate-finder-maven-plugin.version>
+        <duplicate-finder-maven-plugin.version>2.0.1</duplicate-finder-maven-plugin.version>
         <duplicate.ignoredResourcePattern>(about.html|mozilla/public-suffix-list.txt)</duplicate.ignoredResourcePattern>
         <duplicate.ignoredClassPattern>(META-INF.versions.9.module-info|jakarta.el.*)</duplicate.ignoredClassPattern>
 
-        <dependency-check-maven.version>8.1.2</dependency-check-maven.version>
+        <dependency-check-maven.version>8.3.1</dependency-check-maven.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <sonar.projectKey>joinfaces_joinfaces-maven-war-example</sonar.projectKey>
         <sonar.organization>joinfaces</sonar.organization>
@@ -122,18 +120,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.htmlunit</groupId>
-                <artifactId>htmlunit</artifactId>
-                <version>${htmlunit.version}</version>
-                <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
                 <groupId>io.github.bonigarcia</groupId>
                 <artifactId>webdrivermanager</artifactId>
                 <version>${webdrivermanager.version}</version>
@@ -154,21 +140,9 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.rauschig</groupId>
-                <artifactId>jarchivelib</artifactId>
-                <version>${jarchivelib.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>findbugs-annotations</artifactId>
                 <version>${findbugs-annotations.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.httpcomponents.client5</groupId>
-                <artifactId>httpclient5</artifactId>
-                <version>${httpclient5.version}</version>
-                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -235,16 +209,8 @@
             <artifactId>htmlunit-driver</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.htmlunit</groupId>
-            <artifactId>htmlunit</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.rauschig</groupId>
-            <artifactId>jarchivelib</artifactId>
         </dependency>
         <dependency>
             <groupId>jakarta.enterprise</groupId>

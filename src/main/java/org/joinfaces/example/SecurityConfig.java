@@ -22,6 +22,7 @@ import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -29,12 +30,16 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
 /**
  * Spring Security Configuration.
  *
  * @author Marcelo Fernandes
  */
+@SuppressFBWarnings("SPRING_CSRF_PROTECTION_DISABLED")
 @Configuration
 @EnableWebSecurity
 @EnableConfigurationProperties(ApplicationUsers.class)
@@ -48,16 +53,15 @@ public class SecurityConfig {
 	 * @return SecurityFilterChain that contains all the security filters
 	 * @throws BeanCreationException if something in the configuration is wrong
 	 */
-	@SuppressFBWarnings("SPRING_CSRF_PROTECTION_DISABLED")
 	@Bean
-	public SecurityFilterChain configure(HttpSecurity http) {
+	public SecurityFilterChain configure(HttpSecurity http, MvcRequestMatcher.Builder mvc) {
 		try {
 			http.csrf().disable();
 			http
 				.authorizeHttpRequests((authorize) -> authorize
-				.requestMatchers("/").permitAll()
-				.requestMatchers("/**.jsf").permitAll()
-				.requestMatchers("/jakarta.faces.resource/**").permitAll()
+				.requestMatchers(mvc.pattern("/")).permitAll()
+				.requestMatchers(new AntPathRequestMatcher("/**.jsf")).permitAll()
+				.requestMatchers(new AntPathRequestMatcher("/jakarta.faces.resource/**")).permitAll()
 				.anyRequest().authenticated())
 				.formLogin()
 				.loginPage("/login.jsf")
@@ -72,6 +76,12 @@ public class SecurityConfig {
 		catch (Exception ex) {
 			throw new BeanCreationException("Wrong spring security configuration", ex);
 		}
+	}
+
+	@Scope("prototype")
+	@Bean
+	MvcRequestMatcher.Builder mvc(HandlerMappingIntrospector introspector) {
+		return new MvcRequestMatcher.Builder(introspector);
 	}
 
 	/**
