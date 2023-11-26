@@ -53,8 +53,8 @@ public class StarterPage extends AbstractPageComponent {
 	}
 
 	@Override
-	protected String url() {
-		return "/starter.jsf";
+	protected String getLocation() {
+		return "/starter.faces";
 	}
 
 	private void click(WebElement webElement, String technology, By tabHeaderBy)  {

@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0-M2</version>
+        <version>3.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -21,15 +21,15 @@
     <properties>
         <!-- compile library versions -->
         <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
-        <joinfaces.version>5.2.0-m2</joinfaces.version>
-        <maven-model.version>3.9.4</maven-model.version>
+        <joinfaces.version>5.2.0</joinfaces.version>
+        <maven-model.version>3.9.5</maven-model.version>
 
         <!-- test library versions -->
-        <selenium.version>4.10.0</selenium.version>
-        <htmlunit-driver.version>4.10.0</htmlunit-driver.version>
-        <webdrivermanager.version>5.4.1</webdrivermanager.version>
+        <selenium.version>4.13.0</selenium.version>
+        <htmlunit-driver.version>4.13.0</htmlunit-driver.version>
+        <webdrivermanager.version>5.6.2</webdrivermanager.version>
 
-        <jacoco-maven-plugin.version>0.8.9</jacoco-maven-plugin.version>        
+        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>        
         <jacoco.exclude>org/joinfaces/example/JoinFacesExampleApplication.class</jacoco.exclude>
         <jacoco.totalLineRate>0.91</jacoco.totalLineRate>
         <jacoco.packageLineRate>0.90</jacoco.packageLineRate>
@@ -40,14 +40,14 @@
 
         <!-- check library versions -->
         <no-package-cycles-enforcer-rule.version>1.0.9</no-package-cycles-enforcer-rule.version>
-        <spotbugs-maven-plugin.version>4.7.3.5</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.8.1.0</spotbugs-maven-plugin.version>
         <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-pmd-plugin.version>3.21.0</maven-pmd-plugin.version>
-        <maven-checkstyle-plugin.version>3.3.0</maven-checkstyle-plugin.version>
-        <checkstyle.version>10.12.1</checkstyle.version>
+        <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
+        <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
+        <checkstyle.version>10.12.5</checkstyle.version>
 
         <check.dir>src/checkconfig</check.dir>
         <checkstyle.dir>${check.dir}/checkstyle</checkstyle.dir>
@@ -61,11 +61,11 @@
         <checkstyle.headerLocation>${checkstyle.dir}/checkstyle-header.txt</checkstyle.headerLocation>
         <checkstyle.excludes />
         <duplicate-finder-maven-plugin.version>2.0.1</duplicate-finder-maven-plugin.version>
-        <duplicate.ignoredResourcePattern>(about.html|mozilla/public-suffix-list.txt)</duplicate.ignoredResourcePattern>
-        <duplicate.ignoredClassPattern>(META-INF.versions.9.module-info|jakarta.el.*)</duplicate.ignoredClassPattern>
+        <duplicate.ignoredResourcePattern>()</duplicate.ignoredResourcePattern>
+        <duplicate.ignoredClassPattern>()</duplicate.ignoredClassPattern>
 
-        <dependency-check-maven.version>8.3.1</dependency-check-maven.version>
-        <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+        <dependency-check-maven.version>9.0.0</dependency-check-maven.version>
+        <sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
         <sonar.projectKey>joinfaces_joinfaces-maven-war-example</sonar.projectKey>
         <sonar.organization>joinfaces</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -80,7 +80,7 @@
             </dependency>
             <dependency>
                 <groupId>org.joinfaces</groupId>
-                <artifactId>joinfaces-dependencies</artifactId>
+                <artifactId>joinfaces-bom</artifactId>
                 <version>${joinfaces.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -212,10 +212,6 @@
             <artifactId>webdrivermanager</artifactId>
         </dependency>
         <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-model</artifactId>
         </dependency>
@@ -241,18 +237,6 @@
                         <failOnError>true</failOnError>
                         <showDeprecation>true</showDeprecation>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.joinfaces</groupId>
-                    <artifactId>joinfaces-maven-plugin</artifactId>
-                    <version>${joinfaces.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>classpath-scan</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -416,12 +400,15 @@
 
         <plugins>
             <plugin>
-                <groupId>org.joinfaces</groupId>
-                <artifactId>joinfaces-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process-aot</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -552,6 +539,7 @@
                         <artifactId>spotbugs-maven-plugin</artifactId>
                         <executions>
                             <execution>
+                                <phase>process-test-classes</phase>
                                 <goals>
                                     <goal>check</goal>
                                 </goals>

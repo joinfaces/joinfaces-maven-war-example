@@ -16,37 +16,20 @@
 
 package org.joinfaces.example.view;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HelloTagPage extends AbstractPageComponent {
+public class IndexPage extends AbstractPageComponent {
 
-	public HelloTagPage(WebDriver webDriver) {
+	public IndexPage(WebDriver webDriver) {
 		super(webDriver);
 	}
 
 	@Override
-	protected String getLocation() {
-		return "/helloTag.faces";
+	public String getLocation() {
+		return "";
 	}
 
-	private By getHelloWorldDivBy() {
-		return By.id("outputTextTagId");
+	public String getCurrentURL() {
+		return webDriver.getCurrentUrl();
 	}
-
-	public String getHelloWorldText() {
-		return webDriver.findElement(getHelloWorldDivBy()).getText();
-	}
-
-	public HelloTagPage waitLoad() {
-		new WebDriverWait(webDriver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(
-			getHelloWorldDivBy()));
-
-		return this;
-	}
-
 }

@@ -60,16 +60,16 @@ public class SecurityConfig {
 			http
 				.authorizeHttpRequests((authorize) -> authorize
 				.requestMatchers(mvc.pattern("/")).permitAll()
-				.requestMatchers(new AntPathRequestMatcher("/**.jsf")).permitAll()
+				.requestMatchers(new AntPathRequestMatcher("/**.faces")).permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/jakarta.faces.resource/**")).permitAll()
 				.anyRequest().authenticated())
 				.formLogin((formLogin) -> formLogin
-					.loginPage("/login.jsf")
+					.loginPage("/login.faces")
 					.permitAll()
-					.failureUrl("/login.jsf?error=true")
-					.defaultSuccessUrl("/starter.jsf"))
+					.failureUrl("/login.faces?error=true")
+					.defaultSuccessUrl("/starter.faces"))
 				.logout((logout) -> logout
-					.logoutSuccessUrl("/login.jsf"));
+					.logoutSuccessUrl("/login.faces"));
 			return http.build();
 		}
 		catch (Exception ex) {

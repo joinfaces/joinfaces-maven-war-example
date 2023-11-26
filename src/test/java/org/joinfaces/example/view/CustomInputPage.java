@@ -38,8 +38,8 @@ public class CustomInputPage extends AbstractPageComponent {
 	}
 
 	@Override
-	protected String url() {
-		return "/customInput.jsf";
+	protected String getLocation() {
+		return "/customInput.faces";
 	}
 
 	public void submit(String message) {

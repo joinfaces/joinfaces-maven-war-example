@@ -7,7 +7,20 @@ JoinFaces War Example
 
 This SAP (Single Page Application) illustrates JSF usage inside WAR packaged Spring Boot Application.
 
-[JoinFaces](http://joinfaces.org) autoconfigures [PrimeFaces](http://primefaces.org/), [OmniFaces](http://omnifaces.org/), [Mojarra](https://eclipse-ee4j.github.io/mojarra/) and [MyFaces](http://myfaces.apache.org) libraries to run at [Tomcat](http://tomcat.apache.org/), [Jetty](http://www.eclipse.org/jetty) or [Undertow](http://undertow.io/). It autoconfigures [Weld](http://weld.cdi-spec.org) and [Rewrite](https://www.ocpsoft.org/rewrite/) too.
+[JoinFaces](https://joinfaces.org) autoconfigures 
+[PrimeFaces](https://primefaces.org/), 
+[PrimeFaces Extensions](https://primefaces-extensions.github.io/), 
+[Apache MyFaces Tobago](https://github.com/apache/myfaces-tobago), 
+[OmniFaces](https://omnifaces.org/), 
+[AdminFaces](https://adminfaces.github.io/site/), 
+[Mojarra](https://eclipse-ee4j.github.io/mojarra/) and 
+[MyFaces](http://myfaces.apache.org) libraries to run at embedded 
+[Tomcat](https://tomcat.apache.org/), 
+[Jetty](https://www.eclipse.org/jetty) or 
+[Undertow](https://undertow.io/). 
+It autoconfigures [Weld](https://weld.cdi-spec.org),
+[Apache OpenWebBeans](https://openwebbeans.apache.org/) and
+[Rewrite](https://www.ocpsoft.org/rewrite/) too.
 
 ## Run Example Application locally
 
@@ -42,7 +55,7 @@ Includes joinfaces starter dependency. All other jsf dependencies are included t
 
 ```xml
 <properties>
-   <joinfaces.version>5.2.0-m2</joinfaces.version>
+   <joinfaces.version>5.2.0</joinfaces.version>
 </properties>
 
 <dependencyManagement>

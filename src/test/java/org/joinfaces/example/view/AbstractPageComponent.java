@@ -31,10 +31,10 @@ public abstract class AbstractPageComponent {
 		this.webDriver = webDriver;
 	}
 
-	protected abstract String url();
+	protected abstract String getLocation();
 
 	public void navegateTo() {
-		this.webDriver.navigate().to(this.preffix + url());
+		this.webDriver.navigate().to(this.preffix + getLocation());
 	}
 
 	public <T extends AbstractPageComponent> T initElements(Class<T> classx) {
