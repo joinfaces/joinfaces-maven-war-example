@@ -25,7 +25,7 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * JoinFaces Example Configuration class.
+ * Application users credentials.
  * @author Marcelo Fernandes
  */
 @ConfigurationProperties("application-users")

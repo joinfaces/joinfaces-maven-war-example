@@ -46,13 +46,8 @@ import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 public class SecurityConfig {
 
 	/**
-	 * Setups a security filter chain that will be applied to all the requests.
-	 * Since JSF 2.2 there is already a CSRF protection, so the Spring CSRF protection must be disabled,
-	 * because it blocks AJAX requests.
-	 * @param http - autowired HttpSecurity object
-	 * @return SecurityFilterChain that contains all the security filters
-	 * @throws BeanCreationException if something in the configuration is wrong
-	 */
+	 * Configure security.
+	 **/
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http, MvcRequestMatcher.Builder mvc) {
 		try {
@@ -63,13 +58,14 @@ public class SecurityConfig {
 				.requestMatchers(new AntPathRequestMatcher("/**.faces")).permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/jakarta.faces.resource/**")).permitAll()
 				.anyRequest().authenticated())
-				.formLogin((formLogin) -> formLogin
-					.loginPage("/login.faces")
+				.formLogin((formLogin) ->
+					formLogin.loginPage("/login.faces")
 					.permitAll()
 					.failureUrl("/login.faces?error=true")
 					.defaultSuccessUrl("/starter.faces"))
-				.logout((logout) -> logout
-					.logoutSuccessUrl("/login.faces"));
+				.logout((logout) ->
+					logout.logoutSuccessUrl("/login.faces")
+					.deleteCookies("JSESSIONID"));
 			return http.build();
 		}
 		catch (Exception ex) {

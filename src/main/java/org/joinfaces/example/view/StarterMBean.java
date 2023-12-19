@@ -104,7 +104,7 @@ public class StarterMBean implements Serializable {
 			}
 		}
 		if (result.isEmpty()) {
-			result.add("jsf");
+			result.add("faces");
 		}
 
 		return result;
@@ -171,5 +171,11 @@ public class StarterMBean implements Serializable {
 		map.put("starterService", this.joinFacesStarterService);
 		map.put("starterMBean", this);
 		return this.freemarkerUtils.mergeTemplate(map, "pom.ftl");
+	}
+
+	/**
+	* Set pom map.
+	*/
+	public void setPom(String pom) {
 	}
 }
