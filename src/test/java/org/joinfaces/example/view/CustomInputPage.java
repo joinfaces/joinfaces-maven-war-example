@@ -38,8 +38,8 @@ public class CustomInputPage extends AbstractPageComponent {
 	}
 
 	@Override
-	protected String getLocation() {
-		return "/customInput.faces";
+	public String getLocation() {
+		return "customInput.faces";
 	}
 
 	public void submit(String message) {

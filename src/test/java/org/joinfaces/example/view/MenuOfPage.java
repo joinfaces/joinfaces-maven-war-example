@@ -32,8 +32,8 @@ public class MenuOfPage extends AbstractPageComponent {
 	}
 
 	@Override
-	protected String getLocation() {
-		return "/starter.faces";
+	public String getLocation() {
+		return "starter.faces";
 	}
 
 	public StarterPage clickStarter() {

@@ -30,8 +30,8 @@ public class HiCCPage extends AbstractPageComponent {
 	}
 
 	@Override
-	protected String getLocation() {
-		return "/hiCC.faces";
+	public String getLocation() {
+		return "hiCC.faces";
 	}
 
 	private By getHiCCDivBy() {

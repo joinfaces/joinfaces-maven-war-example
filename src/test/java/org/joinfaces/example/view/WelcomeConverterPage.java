@@ -38,8 +38,8 @@ public class WelcomeConverterPage extends AbstractPageComponent {
 	}
 
 	@Override
-	protected String getLocation() {
-		return "/welcomeConverter.faces";
+	public String getLocation() {
+		return "welcomeConverter.faces";
 	}
 
 	public void submit(String message) {

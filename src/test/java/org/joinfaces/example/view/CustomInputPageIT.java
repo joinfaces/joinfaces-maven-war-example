@@ -48,5 +48,4 @@ public class CustomInputPageIT extends AbstractPageIT {
 		assertThat(customInputPage.getOutputText())
 			.isEqualTo("You entered: Hello");
 	}
-
 }
