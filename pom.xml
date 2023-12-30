@@ -60,7 +60,7 @@
         <checkstyle.headerLocation>${checkstyle.dir}/checkstyle-header.txt</checkstyle.headerLocation>
         <checkstyle.excludes />
         <duplicate-finder-maven-plugin.version>2.0.1</duplicate-finder-maven-plugin.version>
-        <duplicate.ignoredResourcePattern>()</duplicate.ignoredResourcePattern>
+        <duplicate.ignoredResourcePattern>(mozilla/public-suffix-list.txt)</duplicate.ignoredResourcePattern>
         <duplicate.ignoredClassPattern>()</duplicate.ignoredClassPattern>
 
         <dependency-check-maven.version>9.0.7</dependency-check-maven.version>
