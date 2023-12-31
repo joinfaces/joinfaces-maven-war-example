@@ -59,7 +59,7 @@ jobs:
 
       - name: Build Native Image
         if: ${{ matrix.java == 21 }}
-        run: ./mvnw -B -Pnative package
+        run: ./mvnw -B -Pnative clean package
 
       - uses: codecov/codecov-action@v3
         with:
