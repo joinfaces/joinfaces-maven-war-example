@@ -1,7 +1,7 @@
 JoinFaces War Example
 =====
 [![Build Status](https://github.com/joinfaces/joinfaces-maven-war-example/actions/workflows/maven.yml/badge.svg)](https://github.com/joinfaces/joinfaces-maven-war-example/actions)
-[![Codecov](https://codecov.io/gh/joinfaces/joinfaces-maven-war-example/branch/4.7.x/graph/badge.svg)](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example)
+[![Codecov](https://codecov.io/gh/joinfaces/joinfaces-maven-war-example/branch/6.1.x/graph/badge.svg)](https://codecov.io/gh/joinfaces/joinfaces-maven-jar-example)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=joinfaces_joinfaces-maven-war-example&metric=bugs)](https://sonarcloud.io/dashboard?id=joinfaces_joinfaces-maven-war-example)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
